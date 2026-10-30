@@ -15,8 +15,9 @@
       <div id="health">HP <span id="healthVal">100</span></div>
       <div id="armor">AR <span id="armorVal">0</span></div>
       <div id="ammo">AMMO <span id="ammoVal">50</span> / <span id="ammoReserve">200</span></div>
-      <div id="weapon">RAILGUN</div>
-    </div>
+    <div id="weapon">MACHINE GUN</div>
+    <div id="score">SCORE <span id="scoreVal">0</span></div>
+  </div>
     <div id="msg">Click to start</div>
   </div>
 
@@ -32,6 +33,26 @@
   </div>
 
   <div id="mobileHint" class="hidden">Tap screen to play</div>
+
+  <!-- Start screen -->
+  <div id="startScreen" class="overlay">
+    <div class="panel">
+      <div id="gameTitle">QAUKEK</div>
+      <div class="subtitle">Quake 3 style mobile FPS</div>
+      <div class="hint">Desktop: click to start · WASD + mouse · Space jump · 1/2 weapon<br>
+      Mobile: tap to start · joystick move · drag right to look</div>
+      <button id="btnStart">START GAME</button>
+    </div>
+  </div>
+
+  <!-- Game over screen -->
+  <div id="gameOverScreen" class="overlay hidden">
+    <div class="panel">
+      <div id="goTitle" style="color:#f44">GAME OVER</div>
+      <div id="goScore">FINAL SCORE: 0</div>
+      <button id="btnRestart">PLAY AGAIN</button>
+    </div>
+  </div>
 
   <canvas id="glCanvas"></canvas>
 
