@@ -1,0 +1,37 @@
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #0b0b0b; font-family: 'Courier New', Courier, monospace; }
+body { touch-action: none; user-select: none; }
+
+#glCanvas { position: absolute; inset: 0; display: block; }
+
+/* Desktop HUD */
+.hud { position: absolute; inset: 0; pointer-events: none; color: #0f0; text-shadow: 0 0 4px #000; z-index: 10; }
+#crosshair { position: absolute; left: 50%; top: 50%; width: 20px; height: 20px; transform: translate(-50%, -50%); }
+#crosshair::before, #crosshair::after { content: ''; position: absolute; background: #0f0; }
+#crosshair::before { left: 9px; top: 0; width: 2px; height: 10px; }
+#crosshair::after { left: 0; top: 9px; width: 10px; height: 2px; }
+
+#stats { position: absolute; left: 20px; bottom: 60px; pointer-events: none; line-height: 1.6; font-size: 18px; font-weight: bold; }
+#stats div { margin: 2px 0; text-shadow: 1px 1px 0 #000; }
+
+#msg { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 24px; font-weight: bold; pointer-events: none; text-shadow: 0 0 8px #000; }
+
+/* Mobile */
+.mobile { position: absolute; inset: 0; pointer-events: auto; z-index: 20; display: flex; flex-direction: column; justify-content: space-between; padding: 12px; }
+.look-zone { position: absolute; inset: 0; width: 60%; height: 100%; right: 0; }
+.joystick { position: absolute; left: 12px; bottom: 90px; width: 110px; height: 110px; border: 3px solid rgba(0,255,0,0.35); border-radius: 50%; background: rgba(0,40,0,0.35); pointer-events: none; }
+.joystick-knob { position: absolute; left: 50%; top: 50%; width: 46px; height: 46px; transform: translate(-50%, -50%); border-radius: 50%; background: rgba(0,255,0,0.6); border: 2px solid #0f0; pointer-events: none; }
+
+.btnRow { position: absolute; right: 12px; bottom: 12px; display: flex; flex-direction: column; gap: 10px; pointer-events: none; }
+.btnRow button { pointer-events: auto; width: 78px; height: 78px; border-radius: 50%; border: 3px solid rgba(0,255,0,0.5); background: rgba(0,30,0,0.55); color: #0f0; font-family: inherit; font-weight: bold; font-size: 13px; text-transform: uppercase; box-shadow: 0 0 10px rgba(0,255,0,0.25); outline: none; }
+.btnRow button:active { background: rgba(0,60,0,0.9); border-color: #0f0; }
+
+#mobileHint { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: #0f0; font-size: 20px; font-weight: bold; pointer-events: none; text-shadow: 0 0 8px #000; z-index: 15; }
+
+.hidden { display: none !important; }
+
+/* Desktop fallback hint */
+@media (min-width: 900px) {
+  .mobile { display: none !important; }
+  #mobileHint { display: none !important; }
+}

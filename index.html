@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Qauker - Quake 3 style mobile FPS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Desktop HUD -->
+  <div id="hud" class="hud">
+    <div id="crosshair"></div>
+    <div id="stats">
+      <div id="health">HP <span id="healthVal">100</span></div>
+      <div id="armor">AR <span id="armorVal">0</span></div>
+      <div id="ammo">AMMO <span id="ammoVal">50</span> / <span id="ammoReserve">200</span></div>
+      <div id="weapon">RAILGUN</div>
+    </div>
+    <div id="msg">Click to start</div>
+  </div>
+
+  <!-- Mobile controls overlay -->
+  <div id="mobile" class="mobile hidden">
+    <div id="lookZone" class="look-zone"></div>
+    <div id="joystick" class="joystick">
+      <div id="joystickKnob" class="joystick-knob"></div>
+    </div>
+    <button id="btnJump">JUMP</button>
+    <button id="btnFire">FIRE</button>
+    <button id="btnWeapon">WEAPON</button>
+  </div>
+
+  <div id="mobileHint" class="hidden">Tap screen to play</div>
+
+  <canvas id="glCanvas"></canvas>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
